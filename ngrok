@@ -1,0 +1,4 @@
+#!//data/data/com.termux/files/usr/bin/bash
+# Code by Dark-34 2024 ©
+#
+termux-chroot -- $PREFIX/share/ngrok/ngrok "$@"
