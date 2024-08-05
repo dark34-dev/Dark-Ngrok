@@ -17,9 +17,5 @@
 **Ejecutamos la herramienta**
 
 
-`bash Dark-Ngrok.sh`
-
-```python
-import sys
-def menu()
-```
+```bash
+bash Dark-Ngrok.sh```
