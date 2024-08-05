@@ -16,3 +16,4 @@
 
 **Ejecutamos la herramienta**
 `bash Dark-Ngrok.sh`
+``` import sys ```
