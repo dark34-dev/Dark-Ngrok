@@ -4,4 +4,14 @@
 
 ```bash
 apt install git -y
-git clone ```
+git clone https://github.com/dark34-dev/Dark-Ngrok
+
+cd Dark-Ngrok
+
+chmod +x *
+
+bash Dark-Ngrok.sh
+
+
+
+```
