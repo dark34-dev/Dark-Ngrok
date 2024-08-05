@@ -21,5 +21,5 @@
 
 ```python
 import sys
-def menu():
+def menu()
 ```
