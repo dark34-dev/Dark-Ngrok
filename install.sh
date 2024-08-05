@@ -1,6 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 # Code by Dark-34 2024 ©
+
 # Colours
 g="\e[0;32m\033[1m"
 en="\033[0m\e[0m"
@@ -24,27 +25,37 @@ function banner {
 function install {
     banner
     echo -e "${g} ¿Deseas seguir con la instalación de Ngrok?\n"
-    echo -e "${b}\n"
     read -p "[Y/N]: " opt
     if [ "$opt" == "y" ]; then
         banner
         echo -e "${c} Instalando Ngrok en tu Termux......${en}\n"
-        rm $PREFIX/bin/ngrok > /dev/null 2>&1
+
+        
+        rm -rf $HOME/ngrok > /dev/null 2>&1
+        rm -f $PREFIX/bin/ngrok > /dev/null 2>&1
         rm -rf $path > /dev/null 2>&1
+
+        
         mkdir -p $path > /dev/null 2>&1
         cp download.sh $path > /dev/null 2>&1
         cp ngrok $PREFIX/bin > /dev/null 2>&1
+
+        
         apt update -y > /dev/null 2>&1
         apt upgrade -y > /dev/null 2>&1
         apt install -y proot wget resolv-conf > /dev/null 2>&1
         apt clean > /dev/null 2>&1
-        apt autoremove > /dev/null 2>&1
+        apt autoremove -y > /dev/null 2>&1
+
+        
         cd $path
         bash download.sh > /dev/null 2>&1
         sleep 1
+
+        
         if [ -f $path/ngrok ] || [ -f $PREFIX/bin/ngrok ]; then
             banner
-            rm -rf $path/download.sh > /dev/null 2>&1
+            rm -f $path/download.sh > /dev/null 2>&1
             chmod 777 $PREFIX/bin/ngrok > /dev/null 2>&1
             chmod 777 $path/ngrok > /dev/null 2>&1
             echo -e "${b}[✓]${g} Se instaló correctamente\n${en}"
